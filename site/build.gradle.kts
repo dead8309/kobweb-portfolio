@@ -1,4 +1,5 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.meta
 
 @Suppress("DSL_SCOPE_VIOLATION") // https://youtrack.jetbrains.com/issue/KTIJ-19369
 plugins {
@@ -15,6 +16,19 @@ kobweb {
     app {
         index {
             description.set("Powered by Kobweb")
+            head.add {
+                meta("og:image", "/banner.png",)
+                meta(name = "og:image:type", content = "image/png")
+                meta(name = "og:image:width", content = "1200")
+                meta(name = "og:image:height", content = "630")
+                meta(name = "og:site_name", content = "Kobweb Portfolio")
+                meta(name = "og:type", content = "website")
+                meta(name = "twitter:site", content = "Kobweb Portfolio")
+                meta(name = "twitter:title", content = "Kobweb Portfolio")
+                meta(name = "twitter:description", content = "A sample portfolio site made from kotlin using kobweb🗿")
+                meta(name = "twitter:card", content = "summary_large_image")
+                meta(name = "twitter:image:src", content = "/banner.png")
+            }
         }
     }
 }
