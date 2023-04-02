@@ -1,0 +1,14 @@
+site:
+  title: "Portfolio Kotlin"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/developmentExecutable/portfolio.js"
+      api: "build/libs/portfolio.jar"
+    prod:
+      script: "build/distributions/portfolio.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
