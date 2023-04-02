@@ -7,33 +7,34 @@ object Constants {
         Project(
             title = "Business Startup",
             description = "Design & Development",
-            imageUrl = "/assets/project-img1.png"
+            imageUrl = Assets.ProjectImg1
         ),
         Project(
             title = "Business Startup",
             description = "Design & Development",
-            imageUrl = "/assets/project-img2.png"
+            imageUrl = Assets.ProjectImg2
         ),
         Project(
             title = "Business Startup",
             description = "Design & Development",
-            imageUrl = "/assets/project-img3.png"
+            imageUrl = Assets.ProjectImg3
         ),
         Project(
             title = "Business Startup",
             description = "Design & Development",
-            imageUrl = "/assets/project-img1.png"
+            imageUrl = Assets.ProjectImg1
         ),
         Project(
             title = "Business Startup",
             description = "Design & Development",
-            imageUrl = "/assets/project-img2.png"
+            imageUrl = Assets.ProjectImg2
         ),
         Project(
             title = "Business Startup",
             description = "Design & Development",
-            imageUrl = "/assets/project-img3.png"
-        ))
+            imageUrl = Assets.ProjectImg3
+        )
+    )
 }
 
 data class Project(

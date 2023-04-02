@@ -8,7 +8,9 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.animation.Keyframes
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
+import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.hover
+import org.example.portfolio.Assets
 import org.jetbrains.compose.web.css.*
 
 val zoomIn by Keyframes {
@@ -20,24 +22,28 @@ val zoomIn by Keyframes {
 val bannerStyle by ComponentStyle {
     base {
         Modifier
+            .fillMaxSize()
             .padding(200.px, 0.px, 100.px, 0.px)
-            .backgroundPosition(BackgroundPosition.Top)
-            .backgroundImage(url("/assets/banner-bg.png"))
-            .backgroundPosition(BackgroundPosition.Center)
+            .backgroundPosition(BackgroundPosition.of(CSSPosition.Top))
+            .backgroundImage(url(Assets.BannerBg))
+            .backgroundPosition(BackgroundPosition.of(CSSPosition.Center))
             .backgroundSize(BackgroundSize.Cover)
             .backgroundRepeat(BackgroundRepeat.NoRepeat)
     }
 }
-val tagLine by ComponentStyle {
+val GradientTagLineStyle by ComponentStyle {
     base {
         Modifier.fontWeight(700)
             .letterSpacing(0.8.px)
             .padding(8.px, 10.px)
             .styleModifier { background("linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%)") }
             .border(1.px, LineStyle.Solid, rgba(255, 255, 255, 0.5))
-            .fontSize(20.px)
+            .fontSize(12.px)
             .margin(bottom = 16.px)
             .display(DisplayStyle.InlineBlock)
+    }
+    Breakpoint.MD {
+        Modifier.fontSize(20.px)
     }
 }
 
