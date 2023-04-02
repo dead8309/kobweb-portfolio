@@ -1,6 +1,6 @@
 # Kotlin Portfoli
 
-![Site](site\src\jsMain\resources\public\banner.png)
+![Site](site/src/jsMain/resources/public/banner.png)
 
 ## Screenshots
 ![Skills](site/src/jsMain/resources/public/skills.png)
