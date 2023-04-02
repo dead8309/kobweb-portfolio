@@ -18,9 +18,6 @@ kobweb {
             description.set("Powered by Kobweb")
             head.add {
                 meta("og:image", "/banner.png",)
-                meta(name = "og:image:type", content = "image/png")
-                meta(name = "og:image:width", content = "1200")
-                meta(name = "og:image:height", content = "630")
                 meta(name = "og:site_name", content = "Kobweb Portfolio")
                 meta(name = "og:type", content = "website")
                 meta(name = "twitter:site", content = "Kobweb Portfolio")

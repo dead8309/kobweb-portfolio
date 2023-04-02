@@ -1,4 +1,4 @@
-# Kotlin Portfoli
+# Sample Kotlin Portfolio using Kobweb
 
 ![Site](site/src/jsMain/resources/public/banner.png)
 
@@ -7,6 +7,8 @@
 ![Projects](site/src/jsMain/resources/public/projects.png)
 ![Contact](site/src/jsMain/resources/public/contact.png)
 ![Footer](site/src/jsMain/resources/public/footer.png)
+
+### This portfolio was originally made in react by [judygab](https://github.com/judygab) in [web-dev-projects/personal-portfolio](https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio)
 
 ## Getting Started
 
