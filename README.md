@@ -3,10 +3,10 @@
 ![Site](site/src/jsMain/resources/public/banner.png)
 
 ## Screenshots
-![Skills](site/src/jsMain/resources/public/skills.png)
-![Projects](site/src/jsMain/resources/public/projects.png)
-![Contact](site/src/jsMain/resources/public/contact.png)
-![Footer](site/src/jsMain/resources/public/footer.png)
+![Skills](images/skills.png)
+![Projects](images/projects.png)
+![Contact](images/contact.png)
+![Footer](images/footer.png)
 
 ### This portfolio was originally made in react by [judygab](https://github.com/judygab) in [web-dev-projects/personal-portfolio](https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio)
 
