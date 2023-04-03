@@ -10,13 +10,12 @@ import com.varabyte.kobweb.silk.components.animation.Keyframes
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.hover
-import org.example.portfolio.Assets
+import org.example.portfolio.utils.Assets
 import org.jetbrains.compose.web.css.*
 
 val zoomIn by Keyframes {
-    from { Modifier.opacity(0).scale(0.3,0.3,0.3) }
-    50.percent { Modifier.opacity(1) }
-    to { Modifier.scale(1,1,1) }
+    from { Modifier.scale(0) }
+    to { Modifier.scale(1) }
 }
 
 val bannerStyle by ComponentStyle {
@@ -38,7 +37,7 @@ val GradientTagLineStyle by ComponentStyle {
             .padding(8.px, 10.px)
             .styleModifier { background("linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%)") }
             .border(1.px, LineStyle.Solid, rgba(255, 255, 255, 0.5))
-            .fontSize(12.px)
+            .fontSize(18.px)
             .margin(bottom = 16.px)
             .display(DisplayStyle.InlineBlock)
     }

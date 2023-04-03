@@ -50,7 +50,6 @@ val NavBarLinkStyle by ComponentStyle {
     base {
         Modifier.fontWeight(400)
             .letterSpacing(0.8.px)
-            .padding(0.px,25.px)
             .fontSize(18.px)
             .opacity(0.75)
     }

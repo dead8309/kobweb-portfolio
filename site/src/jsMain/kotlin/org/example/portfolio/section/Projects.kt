@@ -14,7 +14,7 @@ import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.example.portfolio.Constants
 import org.example.portfolio.component.ProjectCard
-import org.example.portfolio.styles.P
+import org.example.portfolio.styles.ParagraphStyle
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.P
@@ -38,7 +38,7 @@ fun Projects() {
                     .fontWeight(700)
                     .textAlign(TextAlign.Center)
             )
-            P(P.toModifier().toAttrs()) {
+            P(ParagraphStyle.toModifier().toAttrs()) {
                 SpanText(Constants.LOREM)
             }
             SimpleGrid(numColumns(1, sm = 2, lg = 3)) {

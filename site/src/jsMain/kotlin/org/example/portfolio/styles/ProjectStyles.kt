@@ -9,18 +9,19 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.style.ComponentStyle
 import com.varabyte.kobweb.silk.components.style.before
+import com.varabyte.kobweb.silk.components.style.hover
 import org.jetbrains.compose.web.css.*
 
 
-val P by ComponentStyle {
+val ParagraphStyle by ComponentStyle {
     base {
         Modifier.color(Color("#B8B8B8"))
             .fontSize(18.px)
             .letterSpacing(0.8.px)
             .lineHeight(1.5.em)
-            .margin(14.px, 30.px)
+            .margin(14.px)
             .textAlign(TextAlign.Center)
-            .width(56.percent)
+            .width(90.percent)
     }
 }
 
@@ -37,14 +38,15 @@ val projectCardImgBox by ComponentStyle {
                 linearGradient(90.21.deg){
                     add(Color("#AA367C"),-(5.91).percent)
                     add(Color("#4A2FBD"), 111.58.percent)
-                })
+                }
+            )
             .opacity(0.85)
             .position(Position.Absolute)
             .fillMaxWidth()
             .height(0.px)
             .transition(CSSTransition("ease-in-out", 0.4.s))
     }
-    cssRule(":hover::before") {
+    (hover + before){
         Modifier.fillMaxHeight()
     }
     cssRule(":hover .project-card-text-overlay") {
@@ -53,7 +55,7 @@ val projectCardImgBox by ComponentStyle {
     }
 }
 
-val projectCardTextOverlay by ComponentStyle {
+val ProjectCardTextOverlay by ComponentStyle {
     base {
         Modifier
             .position(Position.Absolute)

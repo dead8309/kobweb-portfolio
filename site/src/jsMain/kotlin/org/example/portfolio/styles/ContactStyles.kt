@@ -19,19 +19,20 @@ val ContactStyle by ComponentStyle {
                     add(Color("#4A2FBD"), 111.58.percent)
                 }
             )
-            .padding(60.px, 0.px, 200.px, 0.px)
+            .padding(60.px, 0.75.cssRem, 200.px, 0.75.cssRem)
     }
-    cssRule("> img") {
+    cssRule(" img") {
         Modifier.width(92.percent)
     }
-    cssRule("> h2"){
+    cssRule(" h2"){
         Modifier.fontSize(45.px)
             .fontWeight(700)
             .margin(bottom = 30.px)
     }
 }
 
-val commonFormInputFormTextAreaModifier = Modifier.fillMaxWidth()
+val commonFormInputFormTextAreaModifier = Modifier
+    .width(100.percent)
     .background(CSSBackground(color = rgba(255,255,255,0.1)))
     .border(1.px, LineStyle.Solid, rgba(255, 255, 255, 0.5))
     .borderRadius(20.px)
@@ -44,9 +45,9 @@ val commonFormInputFormTextAreaModifier = Modifier.fillMaxWidth()
     .transition(CSSTransition("ease-in-out",0.3.s))
 
 val formStyle by ComponentStyle {
-    /* base {
-         commonFormInputFormTextAreaModifier
-     }*/
+    base {
+        Modifier.fillMaxWidth()
+    }
     cssRule(" input"){
         commonFormInputFormTextAreaModifier
     }

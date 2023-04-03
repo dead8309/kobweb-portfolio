@@ -1,4 +1,4 @@
-package org.example.portfolio
+package org.example.portfolio.utils
 
 object Assets {
     const val Arrow1 = "/assets/arrow1.svg"

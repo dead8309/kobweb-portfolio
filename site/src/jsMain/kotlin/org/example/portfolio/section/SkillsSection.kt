@@ -7,15 +7,15 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.graphics.Image
-import org.example.portfolio.Assets
 import org.example.portfolio.component.SkillsCard
+import org.example.portfolio.utils.Assets
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.Position
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun Skills() {
+fun SkillSection() {
     Box(
         Modifier
             .id("skills")
@@ -28,8 +28,9 @@ fun Skills() {
                 .borderRadius(64.px)
                 .textAlign(TextAlign.Center)
                 .align(Alignment.TopCenter)
-                .padding(60.px, 50.px)
+                .padding(20.px)
                 .margin(top = (-60).px)
+                .width(90.percent)
                 .zIndex(1),
         )
         Image(

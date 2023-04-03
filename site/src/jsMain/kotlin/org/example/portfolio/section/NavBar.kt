@@ -8,7 +8,6 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.compose.ui.modifiers.width
 import com.varabyte.kobweb.compose.ui.modifiers.zIndex
 import com.varabyte.kobweb.silk.components.forms.Button
@@ -17,10 +16,10 @@ import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.components.text.SpanText
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import org.example.portfolio.Assets
 import org.example.portfolio.component.NavLink
 import org.example.portfolio.styles.NavBarButtonStyle
 import org.example.portfolio.styles.NavBarStyle
+import org.example.portfolio.utils.Assets
 import org.jetbrains.compose.web.css.percent
 
 @Composable
@@ -29,7 +28,6 @@ fun NavBar() {
     Box(
         modifier = NavBarStyle
             .toModifier()
-            .id("home")
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
