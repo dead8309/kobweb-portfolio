@@ -6,10 +6,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.animation
-import com.varabyte.kobweb.compose.ui.modifiers.columnGap
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.animation.toAnimation
 import com.varabyte.kobweb.silk.components.graphics.Image
@@ -31,7 +28,7 @@ import org.jetbrains.compose.web.dom.*
 @Composable
 fun Contact() {
     Box(
-        ContactStyle.toModifier(),
+        ContactStyle.toModifier().id("contact"),
         contentAlignment = Alignment.Center
     ) {
         SimpleGrid(numColumns(1, md = 2), Modifier.fillMaxSize()) {

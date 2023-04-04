@@ -15,6 +15,12 @@ val NavBarStyle by ComponentStyle {
             .position(Position.Fixed)
             .top(0.percent)
             .transition(CSSTransition("ease-in-out", 0.32.s))
+            .backgroundColor(Color.black)
+            .opacity(0.6)
+            .zIndex(10)
+    }
+    hover {
+        Modifier.opacity(1)
     }
 }
 
