@@ -3,10 +3,18 @@
 ![Site](site/src/jsMain/resources/public/banner.png)
 
 ## Screenshots
-![Skills](images/skills.png)
-![Projects](images/projects.png)
-![Contact](images/contact.png)
-![Footer](images/footer.png)
+
+### Desktop
+![Home](images/desktop/home.png)
+![Skills](images/desktop/skills.png)
+![Projects](images/desktop/projects.png)
+![Contact](images/desktop/contact.png)
+
+### Mobile
+![Home](images/mobile/home.png)
+![Skills](images/mobile/skills.png)
+![Projects](images/mobile/projects.png)
+![Contact](images/mobile/contact.png)
 
 ### This portfolio was originally made in react by [judygab](https://github.com/judygab) in [web-dev-projects/personal-portfolio](https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio)
 
