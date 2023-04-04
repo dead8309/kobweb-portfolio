@@ -18,13 +18,14 @@ fun HomePage() {
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
-                .fillMaxSize()
                 .fontWeight(400)
                 .overflowX(Overflow.Hidden)
                 .position(Position.Relative)
                 .backgroundColor(Color("#121212"))
                 .color(Color("#fff"))
-                .fontFamily("Centra", "sans-serif"),
+                .fontFamily(
+                    "Centra" ,"sans-serif"
+                ),
             verticalArrangement = Arrangement.Top
         ) {
             NavBar()

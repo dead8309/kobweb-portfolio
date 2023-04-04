@@ -18,42 +18,37 @@ import org.jetbrains.compose.web.css.vh
 @InitSilk
 fun updateTheme(ctx: InitSilkContext) {
     ctx.stylesheet.registerStyle("@font-face") {
-        Modifier
-            .fontFamily("Centra")
-            .fontWeight(700)
-            .styleModifier {
-                property("src", "url(/font/CentraNo2-Bold.ttf)")
-            }
+        base {
+            Modifier
+                .fontFamily("Centra")
+                .fontWeight(700)
+                .styleModifier {
+                    property("src", "url(font/CentraNo2-Bold.ttf)")
+                }
+        }
     }
     ctx.stylesheet.registerStyle("@font-face") {
-        Modifier
-            .fontFamily("Centra")
-            .fontWeight(500)
-            .styleModifier {
-                property("src", "url(/font/CentraNo2-Medium.ttf)")
-            }
+        base {
+            Modifier
+                .fontFamily("Centra")
+                .fontWeight(500)
+                .styleModifier {
+                    property("src", "url(font/CentraNo2-Medium.ttf)")
+                }
+        }
     }
     ctx.stylesheet.registerStyle("@font-face") {
-        Modifier
-            .fontFamily("Centra")
-            .fontWeight(400)
-            .styleModifier {
-                property("src", "url(/font/CentraNo2-Book.ttf)")
-            }
-    }
-    ctx.stylesheet.registerStyle("body") {
-        Modifier
-            .fontFamily(
-                "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen",
-                "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-                "sans-serif;"
-            )
-            .styleModifier {
-                property("-webkit-font-smoothing", "antialiased")
-                property("-moz-osx-font-smoothing", "grayscale")
-            }
+        base {
+            Modifier
+                .fontFamily("Centra")
+                .fontWeight(400)
+                .styleModifier {
+                    property("src", "url(font/CentraNo2-Book.ttf)")
+                }
+        }
     }
 }
+
 @App
 @Composable
 fun MyApp(content: @Composable () -> Unit) {
