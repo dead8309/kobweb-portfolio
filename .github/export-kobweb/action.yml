@@ -31,9 +31,8 @@ runs:
     - name: Run Export Command
       shell: bash
       run: |
-        echo "Hello" >> hello.txt
-        # cd ${{ inputs.project_directory }}
-      # kobweb export ${{ inputs.export_command }}
+        cd ${{ inputs.project_directory }}
+        kobweb export ${{ inputs.export_command }}
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
