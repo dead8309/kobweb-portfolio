@@ -1,0 +1,44 @@
+name: Kobweb Deployment Github Actions
+description: Github Action for building kobweb project and create a Pull Request with changes
+inputs:
+  java_version:
+    description: Java version to be used by kobweb
+    required: false
+    default: 17
+  project_directory:
+    description: Main directory which holds the kobweb project
+    required: true
+    default: "site"
+  export_command:
+    description: Kobweb Export command to be used while exporting
+    required: false
+    default: "--layout static"
+runs:
+  using: composite
+  steps:
+    - name: Setup Java
+      uses: actions/setup-java@main
+      with:
+        java-version: ${{ inputs.java_version }}
+        distribution: 'adopt'
+        cache: gradle
+    - name: Install and Setup Kobweb cli
+      shell: bash
+      run: |
+        wget https://github.com/varabyte/kobweb/releases/download/cli-v0.9.11/kobweb-0.9.11.zip -P $HOME
+        unzip $HOME/kobweb-0.9.11.zip -d $HOME
+        echo '/home/runner/kobweb-0.9.11/bin' >> $GITHUB_PATH
+    - name: Run Export Command
+      shell: bash
+      run: |
+        echo "Hello" >> hello.txt
+        # cd ${{ inputs.project_directory }}
+      # kobweb export ${{ inputs.export_command }}
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        commit-message: "adds exported files"
+        title: "Add exported files"
+        body: "This pull request adds the exported HTML/CSS/JavaScript files which were generated using the Kobweb cli"
+        branch: "kobweb/export"
+        delete-branch: true

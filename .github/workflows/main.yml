@@ -1,0 +1,11 @@
+name: Export Static Project
+on:
+  push:
+    
+jobs:
+  check-kobweb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Kobweb Export Action
+        uses: ./.github/export-kobweb
