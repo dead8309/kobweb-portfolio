@@ -12,7 +12,7 @@ inputs:
   export_command:
     description: Kobweb Export command to be used while exporting
     required: false
-    default: "--layout static"
+    default: "--layout static --mode dumb"
 runs:
   using: composite
   steps:
