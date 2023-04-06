@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - site/**
+      - !site/.kobweb/**
     
 jobs:
   check-kobweb:

@@ -3,69 +3,73 @@ package org.example.portfolio.utils
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import org.jetbrains.compose.web.css.CSSSizeValue
-import org.jetbrains.compose.web.css.CSSUnit
 
 /**
- * Returns a [CSSSizeValue] with a value set to [first] when the current device's screen width satisfies the given
- * comparator, and set to [other] otherwise.
+ * Private utility function to choose between [first] and [other] values based on the current screen [Breakpoint].
+ * Both [first] and [other] must have the same type [T].
  *
- * @param first The size value to use when the current screen width satisfies the given comparator.
- * @param other The size value to use when the current screen width does not satisfy the given comparator.
- * @param comparator A function that takes a [Breakpoint] and returns a Boolean indicating whether the current screen
- * width satisfies the condition.
- * @return A [CSSSizeValue] representing the size value at the current breakpoint.
+ * @param first The value to be returned if the [comparator] returns true.
+ * @param other The value to be returned if the [comparator] returns false.
+ * @param comparator The comparison function to determine if [first] or [other] should be returned.
+ * @throws IllegalArgumentException if [first] and [other] have different types.
+ * @return The value of [first] if [comparator] returns true, otherwise the value of [other].
  */
 @Composable
-private fun breakpoint(
-    first: CSSSizeValue<CSSUnit.px>,
-    other: CSSSizeValue<CSSUnit.px>,
+private inline fun <T> breakpoint(
+    first: T,
+    other: T,
     comparator: (Breakpoint) -> Boolean
-): CSSSizeValue<CSSUnit.px> {
+): T {
+    require(first!!::class == other!!::class) { "Arguments must have the same type." }
     val breakpoint = rememberBreakpoint()
     return if (comparator(breakpoint.value)) first else other
 }
 
+
 /**
- * Returns a [CSSSizeValue] with a value set to [this] when the current device's screen width is greater than or
- * equal to [Breakpoint.MD], and set to [other] otherwise.
+ * Returns the value of [this] if the current screen width is at least [Breakpoint.MD], otherwise returns the value of [other].
  *
- * @param other The size value to use when the current screen width is less than [Breakpoint.MD].
- * @return A [CSSSizeValue] representing the size value at the current breakpoint.
+ * Both [first] and [other] must have the same type [T]
+ *
+ * @param other The value to be returned if the screen width is less than [Breakpoint.MD].
+ * @return The value of [this] if the screen width is at least [Breakpoint.MD], otherwise the value of [other].
  */
 @Composable
-infix fun CSSSizeValue<CSSUnit.px>.atBreakpointMd(other: CSSSizeValue<CSSUnit.px>): CSSSizeValue<CSSUnit.px> =
+infix fun <T> T.atBreakpointMd(other: T) =
     breakpoint(this, other) { breakpoint -> breakpoint >= Breakpoint.MD }
 
 /**
- * Returns a [CSSSizeValue] with a value set to [this] when the current device's screen width is greater than or
- * equal to [Breakpoint.SM], and set to [other] otherwise.
+ * Returns the value of [this] if the current screen width is at least [Breakpoint.SM], otherwise returns the value of [other].
  *
- * @param other The size value to use when the current screen width is less than [Breakpoint.SM].
- * @return A [CSSSizeValue] representing the size value at the current breakpoint.
+ * Both [first] and [other] must have the same type [T]
+ *
+ * @param other The value to be returned if the screen width is less than [Breakpoint.SM].
+ * @return The value of [this] if the screen width is at least [Breakpoint.SM], otherwise the value of [other].
  */
 @Composable
-infix fun CSSSizeValue<CSSUnit.px>.atBreakpointSM(other: CSSSizeValue<CSSUnit.px>): CSSSizeValue<CSSUnit.px> =
+infix fun <T> T.atBreakpointSM(other: T) =
     breakpoint(this, other) { breakpoint -> breakpoint >= Breakpoint.SM }
 
 /**
- * Returns a [CSSSizeValue] with a value set to [this] when the current device's screen width is greater than or
- * equal to [Breakpoint.XL], and set to [other] otherwise.
+ * Returns the value of [this] if the current screen width is at least [Breakpoint.XL], otherwise returns the value of [other].
  *
- * @param other The size value to use when the current screen width is less than [Breakpoint.XL].
- * @return A [CSSSizeValue] representing the size value at the current breakpoint.
+ * Both [first] and [other] must have the same type [T]
+ *
+ * @param other The value to be returned if the screen width is less than [Breakpoint.XL].
+ * @return The value of [this] if the screen width is at least [Breakpoint.XL], otherwise the value of [other].
  */
 @Composable
-infix fun CSSSizeValue<CSSUnit.px>.atBreakpointXL(other: CSSSizeValue<CSSUnit.px>): CSSSizeValue<CSSUnit.px> =
+infix fun <T> T.atBreakpointXL(other: T) =
     breakpoint(this, other) { breakpoint -> breakpoint >= Breakpoint.XL }
 
 /**
- * Returns a [CSSSizeValue] with a value set to [this] when the current device's screen width is greater than or
- * equal to [Breakpoint.LG], and set to [other] otherwise.
+ * Returns the value of [this] if the current screen width is at least [Breakpoint.LG], otherwise returns the value of [other].
  *
- * @param other The size value to use when the current screen width is less than [Breakpoint.LG].
- * @return A [CSSSizeValue] representing the size value at the current breakpoint.
+ * Both [first] and [other] must have the same type [T]
+ *
+ * @param other The value to be returned if the screen width is less than [Breakpoint.LG].
+ * @return The value of [this] if the screen width is at least [Breakpoint.LG], otherwise the value of [other].
  */
 @Composable
-infix fun CSSSizeValue<CSSUnit.px>.atBreakpointLG(other: CSSSizeValue<CSSUnit.px>): CSSSizeValue<CSSUnit.px> =
+infix fun <T> T.atBreakpointLG(other: T) =
     breakpoint(this, other) { breakpoint -> breakpoint >= Breakpoint.LG }
