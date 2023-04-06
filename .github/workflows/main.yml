@@ -2,8 +2,8 @@ name: Export Static Project
 on:
   push:
     paths:
-      - site/**
-      - !site/.kobweb/**
+      - "site/**"
+      - "!site/.kobweb/**"
     
 jobs:
   check-kobweb:
