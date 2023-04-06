@@ -1,38 +1,42 @@
 name: Kobweb Deployment Github Actions
 description: Github Action for building kobweb project and create a Pull Request with changes
 inputs:
-  java_version:
+  java-version:
     description: Java version to be used by kobweb
     required: false
-    default: 17
-  project_directory:
+    default: "17"
+  project-directory:
     description: Main directory which holds the kobweb project
     required: true
     default: "site"
-  export_command:
+  export-command:
     description: Kobweb Export command to be used while exporting
     required: false
     default: "--layout static --mode dumb"
+  cli-version:
+    description: Kobweb cli version
+    required: false
+    default: 0.9.11
 runs:
   using: composite
   steps:
     - name: Setup Java
       uses: actions/setup-java@main
       with:
-        java-version: ${{ inputs.java_version }}
+        java-version: ${{ inputs.java-version }}
         distribution: 'adopt'
         cache: gradle
     - name: Install and Setup Kobweb cli
       shell: bash
       run: |
-        wget https://github.com/varabyte/kobweb/releases/download/cli-v0.9.11/kobweb-0.9.11.zip -P $HOME
-        unzip $HOME/kobweb-0.9.11.zip -d $HOME
-        echo '/home/runner/kobweb-0.9.11/bin' >> $GITHUB_PATH
+        wget https://github.com/varabyte/kobweb/releases/download/cli-v${{ inputs.cli-version }}/kobweb-${{ inputs.cli-version }}.zip -P $HOME
+        unzip $HOME/kobweb-${{ inputs.cli-version }}.zip -d $HOME
+        echo '/home/runner/kobweb-${{ inputs.cli-version }}/bin' >> $GITHUB_PATH
     - name: Run Export Command
       shell: bash
       run: |
-        cd ${{ inputs.project_directory }}
-        kobweb export ${{ inputs.export_command }}
+        cd ${{ inputs.project-directory }}
+        kobweb export ${{ inputs.export-command }}
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
