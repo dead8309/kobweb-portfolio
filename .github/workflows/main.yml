@@ -4,6 +4,7 @@ on:
     paths:
       - "site/**"
       - "!site/.kobweb/**"
+  workflow_dispatch:
     
 jobs:
   check-kobweb:
