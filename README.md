@@ -16,7 +16,10 @@
 ![Projects](images/mobile/projects.png)
 ![Contact](images/mobile/contact.png)
 
-### This portfolio was originally made in react by [judygab](https://github.com/judygab) in [web-dev-projects/personal-portfolio](https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio)
+
+> **Note**
+> This portfolio was originally made in react by [judygab](https://github.com/judygab) in [web-dev-projects/personal-portfolio](https://github.com/judygab/web-dev-projects/tree/main/personal-portfolio)
+
 
 ## Getting Started
 
