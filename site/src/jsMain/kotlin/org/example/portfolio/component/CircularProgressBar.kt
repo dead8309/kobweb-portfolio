@@ -13,9 +13,11 @@ import kotlin.time.Duration.Companion.milliseconds
 
 @Composable
 fun CircularProgressBar(
+    modifier: Modifier = Modifier,
     start: Int = 0,
     stop: Int = 100,
-    delay: Duration = 10.milliseconds
+    delay: Duration = 10.milliseconds,
+    colors: DefaultCircularProgressBarColor = DefaultCircularProgressBarColor()
 ) {
     var current by remember { mutableStateOf(start) }
     LaunchedEffect(Unit) {
@@ -34,9 +36,9 @@ fun CircularProgressBar(
             .styleModifier {
                 property(
                     propertyName = "background",
-                    value = "radial-gradient(closest-side, black 79%, transparent 80% 100%),conic-gradient(blue $current%, lightblue 0)"
+                    value = "radial-gradient(closest-side, ${colors.innerCircle} 79%, transparent 80% 100%),conic-gradient(${colors.progressColor} $current%, ${colors.progressBackground} 0)"
                 )
-            }
+            }.then(modifier)
     ) {
         SpanText(
             text = "$current%",
@@ -46,5 +48,10 @@ fun CircularProgressBar(
                 .color(Color.white)
         )
     }
-
 }
+
+data class DefaultCircularProgressBarColor(
+    val innerCircle: CSSColorValue = Color.black,
+    val progressBackground: CSSColorValue = Color.lightblue,
+    val progressColor: CSSColorValue = Color.blue
+)
