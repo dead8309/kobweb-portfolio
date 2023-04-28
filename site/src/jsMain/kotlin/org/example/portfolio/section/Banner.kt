@@ -27,7 +27,7 @@ import org.jetbrains.compose.web.dom.P
 @Composable
 fun Banner() {
     val animatedText = rememberAnimatedText(
-        toRotate = listOf("Web Developer", "Web Designer", "UI/UX Designer","Android Developer"),
+        toRotate = listOf("Android Developer", "Web Developer", "UI/UX Designer"),
         period = 2000
     )
     SimpleGrid(
